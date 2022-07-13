@@ -73,8 +73,15 @@ function generatePassword() {
     alert("You must choose at least one character type! Please try again.");
     return "Try again!";
   }
-};
-// This is the end of my code and the beginning of the starter code
+
+// the for loop that generates and returns the password
+  for (i = passwordLength; i > 0; i--) {
+    newCharacter = workingArray[Math.floor(Math.random() * workingArray.length)];
+    password = password.concat(newCharacter);
+  }
+
+  return password;
+}; // This is the end of my code and the beginning of the starter code
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
