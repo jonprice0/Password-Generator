@@ -22,6 +22,57 @@ function generatePassword() {
   var upperConfirm = confirm("Would you like your password to include upper-case letters?");
   var numberConfirm = confirm("Would you like your password to include numbers?");
   var symbolConfirm = confirm("Would you like your password to include symbols?");
+
+// define the workingArray based on user input
+  if (lowerConfirm && upperConfirm && numberConfirm && symbolConfirm) {
+    workingArray = arrayLower.concat(arrayUpper.concat(arrayNumber.concat(arraySymbol)));
+  }
+  if (lowerConfirm && upperConfirm && numberConfirm && !symbolConfirm) {
+    workingArray = arrayLower.concat(arrayUpper.concat(arrayNumber));
+  }
+  if (lowerConfirm && upperConfirm && !numberConfirm && symbolConfirm) {
+    workingArray = arrayLower.concat(arrayUpper.concat(arraySymbol));
+  }
+  if (lowerConfirm && upperConfirm && !numberConfirm && !symbolConfirm) {
+    workingArray = arrayLower.concat(arrayUpper);
+  }
+  if (lowerConfirm && !upperConfirm && numberConfirm && symbolConfirm) {
+    workingArray = arrayLower.concat(arrayNumber.concat(arraySymbol));
+  }
+  if (lowerConfirm && !upperConfirm && numberConfirm && !symbolConfirm) {
+    workingArray = arrayLower.concat(arrayNumber);
+  }
+  if (lowerConfirm && !upperConfirm && !numberConfirm && symbolConfirm) {
+    workingArray = arrayLower.concat(arraySymbol);
+  }
+  if (lowerConfirm && !upperConfirm && !numberConfirm && !symbolConfirm) {
+    workingArray = arrayLower;
+  }
+  if (!lowerConfirm && upperConfirm && numberConfirm && symbolConfirm) {
+    workingArray = arrayUpper.concat(arrayNumber.concat(arraySymbol));
+  }
+  if (!lowerConfirm && upperConfirm && numberConfirm && !symbolConfirm) {
+    workingArray = arrayUpper.concat(arrayNumber);
+  }
+  if (!lowerConfirm && upperConfirm && !numberConfirm && symbolConfirm) {
+    workingArray = arrayUpper.concat(arraySymbol);
+  }
+  if (!lowerConfirm && upperConfirm && !numberConfirm && !symbolConfirm) {
+    workingArray = arrayUpper;
+  }
+  if (!lowerConfirm && !upperConfirm && numberConfirm && symbolConfirm) {
+    workingArray = arrayNumber.concat(arraySymbol);
+  }
+  if (!lowerConfirm && !upperConfirm && numberConfirm && !symbolConfirm) {
+    workingArray = arrayNumber;
+  }
+  if (!lowerConfirm && !upperConfirm && !numberConfirm && symbolConfirm) {
+    workingArray = arraySymbol;
+  }
+  if (!lowerConfirm && !upperConfirm && !numberConfirm && !symbolConfirm) {
+    alert("You must choose at least one character type! Please try again.");
+    return "Try again!";
+  }
 };
 // This is the end of my code and the beginning of the starter code
 
